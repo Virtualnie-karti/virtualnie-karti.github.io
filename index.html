@@ -6,8 +6,12 @@
     
     <!-- SEO Meta Tags -->
     <title>Виртуальная карта онлайн 2026 — лучшие банки, где открыть и оформить бесплатно без посещения банка</title>
-    <meta name="description" content="Рейтинг лучших сервисов и банков, где можно открыть виртуальную карту онлайн без визита в офис. Бесплатные дебетовые и зарубежные виртуальные карты для оплаты в интернете и за границей, моментальный выпуск, оформление без посещения банка. Сравнение условий и способов получить карту быстро.">
+    <meta name="description" content="Рейтинг лучших сервисов и банков, где можно открыть виртуальную карту онлайн без визита в офис. Бесплатные дебетовые и зарубежные виртуальные карты для оплаты в интернете и за границей.">
     
+    <!-- Canonical Tag (Решение проблемы с дублями/редиректами для SEO) -->
+    <!-- ЗАМЕНИТЕ ССЫЛКУ НИЖЕ НА ВАШУ РЕАЛЬНУЮ ССЫЛКУ НА САЙТ -->
+    <link rel="canonical" href="https://virtualnie-karti.github.io/" />
+
     <!-- Yandex Verification -->
     <meta name="yandex-verification" content="4ed23de1a68eb982" />
     
@@ -18,14 +22,15 @@
     <style>
         :root {
             /* Money Green Palette */
-            --primary: #16a34a;       /* Насыщенный зеленый (цвет денег) */
-            --primary-dark: #15803d;  /* Темно-зеленый для наведения */
-            --gold-accent: #d97706;   /* Золотой для акцентов */
+            --primary: #16a34a;       /* Насыщенный зеленый */
+            --primary-dark: #15803d;  /* Темно-зеленый */
+            --gold-accent: #d97706;   /* Золотой */
             
-            --text-dark: #1e293b;     /* Основной текст */
-            --text-gray: #475569;     /* Вторичный текст */
-            --bg-body: #f0fdf4;       /* Очень светлый зеленоватый фон */
-            --bg-card: #ffffff;       /* Фон карточек */
+            --text-dark: #1e293b;
+            --text-gray: #475569;
+            --bg-body: #f0fdf4;
+            --bg-card: #ffffff;
+            --menu-bg: #ffffff;
         }
 
         body {
@@ -36,11 +41,61 @@
             margin: 0;
             padding: 0;
             font-size: 18px;
+            padding-top: 70px; /* Отступ для фиксированного меню */
         }
 
-        /* Container */
+        /* 3. Sticky Menu */
+        .sticky-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--menu-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            height: 60px;
+            display: flex;
+            align-items: center;
+        }
+
+        .menu-container {
+            width: 100%;
+            max-width: 1100px; /* Совпадает с шириной контента */
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .menu-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .menu-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .menu-links a:hover {
+            color: var(--primary);
+        }
+
+        /* 4. Container Width Increase */
         .container {
-            max-width: 800px;
+            max-width: 1100px; /* Было 800px, стало шире как просили */
             margin: 0 auto;
             padding: 20px;
         }
@@ -57,10 +112,10 @@
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             margin-bottom: 15px;
             line-height: 1.25;
-            color: #064e3b; /* Темно-изумрудный */
+            color: #064e3b;
         }
 
         .subtitle {
@@ -69,23 +124,24 @@
             margin: 0;
         }
 
-        /* Typography within Article */
+        /* Typography */
         article p {
             margin-bottom: 1.2em;
         }
 
         h2 {
-            font-size: 1.75rem;
+            font-size: 2rem;
             margin-top: 50px;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             color: var(--text-dark);
             border-bottom: 3px solid var(--gold-accent);
             display: inline-block;
             padding-bottom: 5px;
+            scroll-margin-top: 80px; /* Чтобы меню не перекрывало заголовок при клике */
         }
 
         h3 {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             margin-top: 0;
             margin-bottom: 15px;
             color: var(--primary);
@@ -95,10 +151,6 @@
         ul {
             margin-bottom: 20px;
             padding-left: 20px;
-        }
-
-        li {
-            margin-bottom: 10px;
         }
         
         ul li::marker {
@@ -125,7 +177,7 @@
         .card-image {
             width: 100%;
             height: auto;
-            max-height: 400px;
+            max-height: 450px; /* Чуть увеличили для широкого экрана */
             object-fit: cover;
             border-radius: 8px;
             margin-bottom: 20px;
@@ -145,6 +197,8 @@
             margin-top: 15px;
             transition: all 0.2s;
             box-shadow: 0 4px 6px rgba(22, 163, 74, 0.2);
+            text-align: center; /* Для мобильной версии */
+            box-sizing: border-box; /* 8. Fix button overflow */
         }
 
         .btn:hover {
@@ -204,7 +258,6 @@
             background-color: var(--primary-dark);
         }
 
-        /* Footer */
         footer {
             text-align: center;
             padding: 40px 0;
@@ -212,13 +265,46 @@
             font-size: 0.9rem;
         }
 
-        /* Mobile */
+        /* --- MOBILE ADAPTATION --- */
         @media (max-width: 600px) {
-            h1 { font-size: 1.6rem; }
-            h2 { font-size: 1.4rem; }
-            .container { padding: 15px; }
-            .service-card { padding: 20px; }
-            .btn { width: 100%; text-align: center; }
+            /* 3. Mobile Menu Adjustments */
+            .logo { font-size: 1rem; }
+            .menu-links { gap: 10px; }
+            .menu-links a { font-size: 0.9rem; }
+            
+            /* 5. Mobile Header Wider */
+            .container { 
+                padding: 10px; /* Уменьшили отступы контейнера */
+                width: 100%;
+            }
+            header { 
+                padding: 20px 15px; /* Уменьшили внутренние отступы шапки */
+                margin-bottom: 20px;
+                border-radius: 12px;
+            }
+            h1 { font-size: 1.6rem; margin-bottom: 10px; }
+            
+            /* 6. Mobile: Reduce distance between blocks */
+            .service-card {
+                padding: 20px; 
+                margin-bottom: 15px; /* Было 30px */
+            }
+            p { margin-bottom: 1em; }
+
+            /* 7. Mobile: Reduce H2 margins */
+            h2 { 
+                font-size: 1.4rem; 
+                margin-top: 30px; /* Было 50px */
+                margin-bottom: 15px; /* Было 25px */
+            }
+
+            /* 8. Fix Button Overflow */
+            .btn { 
+                width: 100%; 
+                max-width: 100%;
+                display: block; 
+                padding: 12px 10px;
+            }
         }
     </style>
 
@@ -239,6 +325,18 @@
 </head>
 <body>
 
+    <!-- 3. Sticky Menu -->
+    <nav class="sticky-menu">
+        <div class="menu-container">
+            <a href="#" class="logo">💸 Виртуальные карты</a>
+            <div class="menu-links">
+                <a href="#rating">Рейтинг</a>
+                <a href="#criteria">Как выбрать</a>
+                <a href="#tips">Советы</a>
+            </div>
+        </div>
+    </nav>
+
     <!-- Back to Top Button -->
     <button onclick="topFunction()" id="backToTop" title="Наверх">↑</button>
 
@@ -254,7 +352,8 @@
             
             <p>В этой статье я расскажу, как оформить виртуальную карту для оплаты в несколько кликов, какие сервисы помогают открыть онлайн карту виртуальную с разными валютами и почему это выгоднее, чем держать физический «пластик». Если вы давно задумывались о том, как сделать виртуальную карту или хотите узнать, где можно открыть виртуальную дебетовую карту без очередей, то этот обзор именно для вас.</p>
 
-            <h2>ТОП-8 платформ где можно открыть виртуальную карту банка</h2>
+            <!-- Добавлен ID для меню -->
+            <h2 id="rating">ТОП-8 платформ где можно открыть виртуальную карту банка</h2>
             <p>Ниже представлено восемь сервисов, где можно быстро завести виртуальную карту банка онлайн, а также использовать её для международных платежей, переводов и покупок в интернете.</p>
 
             <!-- 1. XCards -->
@@ -369,7 +468,8 @@
                 <a href="https://virtualcards.su/m6dWan" target="_blank" class="btn">Перейти на сайт</a>
             </div>
 
-            <h2>Мои показатели для выбора виртуальной карты</h2>
+            <!-- Добавлен ID для меню -->
+            <h2 id="criteria">Мои показатели для выбора виртуальной карты</h2>
             
             <div style="margin-bottom: 25px;">
                 <h3>Бесплатный выпуск</h3>
@@ -396,7 +496,8 @@
                 <p>Виртуальная карта без посещения банка должна иметь надёжные механизмы защиты: блокировка по запросу, уведомления о транзакциях, двухфакторная аутентификация. Важно снизить риск несанкционированных операций.</p>
             </div>
 
-            <h2>Мои советы:</h2>
+            <!-- Добавлен ID для меню -->
+            <h2 id="tips">Мои советы:</h2>
             <ul class="advice-list">
                 <li>
                     <strong>Сравнивайте курсы при конвертации</strong><br>
